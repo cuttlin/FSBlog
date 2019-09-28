@@ -6,40 +6,40 @@
     <title>@ViewData["Title"] - FSBlog</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link href="~/img/cat_icon.png" rel="icon" type="image/x-icon" />
+        <link rel="stylesheet" href="~/css/spectre-exp.min.css" />
+        <link rel="stylesheet" href="~/css/spectre-icons.min.css" />
+        <link rel="stylesheet" href="~/css/spectre.min.css" />
     </environment>
-    <environment exclude="Development">
+    @*<environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
-    </environment>
+    </environment>*@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">首页</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://www.cnblogs.com/fsh001/">博客园</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="https://github.com/cuttlin">github</a>
-                        </li>
-                    </ul>
+    <header class="navbar">
+        <div class="container grid-lg">
+            <section class="navbar-section">
+                <a href="/Home/Index" class="navbar-brand mr-2">主页</a>
+                <a href="/Blog/BlogList" class="btn btn-link">我的博客</a>
+                <a href="..." class="btn btn-link">我的随笔</a>
+                <a href="..." class="btn btn-link">留言板</a>
+                <a href="https://www.cnblogs.com/fsh001" class="btn btn-link">博客园</a>
+                <a href="https://github.com/cuttlin" class="btn btn-link">GitHub</a>
+            </section>
+            <section class="navbar-section">
+                <div class="input-group input-inline">
+                    <input class="form-input" type="text" placeholder="search">
+                    <button class="btn btn-primary input-group-btn">Search</button>
                 </div>
-            </div>
-        </nav>
+            </section>
+        </div>
     </header>
-    <div class="container">
+    <div class="container grid-lg">
         <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
@@ -47,12 +47,15 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - FSBlog - <a href="#">Contact us</a>
+        <div class="container text-center">
+            &copy; 2019 - FSBlog
+            <a href="http://beian.miit.gov.cn" style="color:black;" target="_blank">冀ICP备19029389号</a>
+            -
+            <a href="mailto:fengshuai99@outlook.com">Contact us</a>
         </div>
     </footer>
 
-    <environment include="Development">
+    @*<environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </environment>
@@ -70,7 +73,7 @@
                 integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o">
         </script>
     </environment>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>*@
 
     @RenderSection("Scripts", required: false)
 </body>
