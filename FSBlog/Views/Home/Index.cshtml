@@ -1,83 +1,119 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Blog>
+@{
+    ViewData["Title"] = "Feng Shuai Hu";
 }
 
-
+@{Blog b = (Blog)ViewData["blog"];}
 <div class="timeline">
     <div class="timeline-item" id="timeline-example-1">
         <div class="timeline-left">
             <a class="timeline-icon" href="#timeline-example-1"></a>
         </div>
         <div class="timeline-content">
-            2016年8月
+            @b.Time
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title h5">Linux的五种读法</div>
-                    <div class="card-subtitle text-gray">Linux</div>
+                    <div class="card-title h5">@b.Name</div>
+                    <div class="card-subtitle text-gray">@b.Category</div>
                 </div>
                 <div class="card-body">
                     linux发音五花八门版本颇多，见到和听到的不下10种。根据linux的创始人Linus Torvalds的说法，Linux的发音和“Minix”是押韵的。“Li”中“i”的发音类似于“Minix”中“i”的发音，而“nux”中“u”的发音类似于英文单词“profess”中“o”的发音。
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-primary">阅读全文</button>
+                    <button class="btn btn-primary" onclick="alltext(@b.Id)">阅读全文</button>
                 </div>
             </div>
         </div>
     </div>
+    @{ int i = 0;}
+    @foreach (var item in Model)
+    {
+        i++;
 
-    <div class="timeline-item" id="timeline-example-2">
-        <div class="timeline-left">
-            <a class="timeline-icon icon-lg" href="#timeline-example-2">
-                <i class="icon icon-check"></i>
-            </a>
-        </div>
-        <div class="timeline-content">
-            2017年9月
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title h5">Linux的五种读法</div>
-                    <div class="card-subtitle text-gray">Linux</div>
+        @if (i > Convert.ToInt32(ViewData["count"]))
+        {
+            break;
+        }
+
+            <div class="timeline-item" id="timeline-example-2">
+                <div class="timeline-left">
+                    <a class="timeline-icon icon-lg" href="#timeline-example-2">
+                        <i class="icon icon-check"></i>
+                    </a>
                 </div>
-                <div class="card-body">
-                    linux发音五花八门版本颇多，见到和听到的不下10种。根据linux的创始人Linus Torvalds的说法，Linux的发音和“Minix”是押韵的。“Li”中“i”的发音类似于“Minix”中“i”的发音，而“nux”中“u”的发音类似于英文单词“profess”中“o”的发音。
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">阅读全文</button>
+                <div class="timeline-content">
+                    @item.Time
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title h5">@item.Name</div>
+                            <div class="card-subtitle text-gray">@item.Category</div>
+                        </div>
+                        <div class="card-body">
+                            linux发音五花八门版本颇多，见到和听到的不下10种。根据linux的创始人Linus Torvalds的说法，Linux的发音和“Minix”是押韵的。“Li”中“i”的发音类似于“Minix”中“i”的发音，而“nux”中“u”的发音类似于英文单词“profess”中“o”的发音。
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-primary" onclick="alltext(@item.Id)">阅读全文</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <div class="timeline-item" id="timeline-example-2">
-        <div class="timeline-left">
-            <a class="timeline-icon icon-lg" href="#timeline-example-2">
-                <i class="icon icon-check"></i>
-            </a>
-        </div>
-        <div class="timeline-content">
-            2017年9月
-            <div class="card">
-                <div class="card-header">
-                    <div class="card-title h5">Linux的五种读法</div>
-                    <div class="card-subtitle text-gray">Linux</div>
-                </div>
-                <div class="card-body">
-                    linux发音五花八门版本颇多，见到和听到的不下10种。根据linux的创始人Linus Torvalds的说法，Linux的发音和“Minix”是押韵的。“Li”中“i”的发音类似于“Minix”中“i”的发音，而“nux”中“u”的发音类似于英文单词“profess”中“o”的发音。
-                </div>
-                <div class="card-footer">
-                    <button class="btn btn-primary">阅读全文</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <center>
-        <input type="button" onclick="window.location.href='/Blog/BlogList'" class="btn" value=" 查 看 更 多 博 客 >> " />
-    </center>
 
-    
+    }
+
+            <center>
+                @if (ViewData["out"] != null)
+                {
+                    <input type="button" onclick="moreItem()" class="btn" value=" 真 的 是 没 有 啦 !! " />
+                }
+                else
+                {
+                    <input type="button" onclick="moreItem()" class="btn" value=" 查 看 更 多 内 容 >> " />
+                }
+
+            </center>
+
+
 
 </div>
 
+<script type="text/javascript">
+    function alltext(id) {
+        window.location.href = "/Blog/BlogDetail?id=" + id;
+    }
+    function moreItem() {
+        @{ int count = Convert.ToInt32(ViewData["count"]);
+            count += 3;
+            ViewData["count"] = count;
+            }
+        window.location.href = "/home/Index?count="+@ViewData["count"].ToString();
+    }
+
+    window.onbeforeunload = function () {
+        var scrollPos;
+        if (typeof window.pageYOffset != 'undefined') {
+            scrollPos = window.pageYOffset;
+        }
+        else if (typeof document.compatMode != 'undefined' &&
+            document.compatMode != 'BackCompat') {
+            scrollPos = document.documentElement.scrollTop;
+        }
+        else if (typeof document.body != 'undefined') {
+            scrollPos = document.body.scrollTop;
+        }
+        document.cookie = "scrollTop=" + scrollPos; //存储滚动条位置到cookies中
+    }
+
+    window.onload = function () {
+        if (document.cookie.match(/scrollTop=([^;]+)(;|$)/) != null) {
+            var arr = document.cookie.match(/scrollTop=([^;]+)(;|$)/); //cookies中不为空，则读取滚动条位置
+            document.documentElement.scrollTop = parseInt(arr[1]);
+            document.body.scrollTop = parseInt(arr[1]);
+        }
+    }
+
+
+</script>
 
 @*<div class="text-center">
         <h1 class="display-4">建设中。。。</h1>

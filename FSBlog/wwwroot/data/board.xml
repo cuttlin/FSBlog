@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<board>
+  <message id="1" ip="127.0.0.1">
+    <name>admin</name>
+    <email>123@qq.com</email>
+    <time>2020-01-01 10:55:00</time>
+    <content>哈哈哈哈哈</content>
+  </message>
+</board>

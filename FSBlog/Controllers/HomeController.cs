@@ -28,9 +28,11 @@ namespace FSBlog.Controllers
         }
 
 
-        public IActionResult Index()
+        public IActionResult Index(string count)
         {
             ViewData["Title"] = "首页";
+            
+            #region 获取访问IP信息
             if (HttpContext.Session.GetString("isfirstreq") == null)
             {
                 HttpContext.Session.SetString("isfirstreq", "isfirstreq");
@@ -97,9 +99,53 @@ namespace FSBlog.Controllers
                     time.InnerText = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
                     xn["accesstime"].AppendChild(time);
                 }
+                HttpContext.Session.SetString("uip", ip);
                 doc.Save(_hostingEnvironment.WebRootPath + @"\data\userip.xml");
             }
-            return View();
+            #endregion
+
+            // 加载第一项
+            List<Blog> list = new List<Blog>();
+            XmlDocument d = new XmlDocument();
+            d.Load(_hostingEnvironment.WebRootPath + @"\data\blogrecard.xml");
+            XmlElement r = d.DocumentElement;
+            XmlNode lastc = d.LastChild;
+            lastc = lastc.LastChild;
+            Blog b = new Blog();
+            b.Id = Convert.ToInt32(lastc.Attributes["id"].Value);
+            b.Name = lastc.Attributes["name"].InnerText;
+            b.Type = Convert.ToInt32(lastc.Attributes["type"].Value);
+            b.Category = lastc.Attributes["category"].InnerText;
+            b.Time = lastc.LastChild.InnerText;
+            ViewData["blog"] = b;
+            int maxb = b.Id;
+            // 加载剩余项
+            for (int i = b.Id-1; i > 0; i--)
+            {
+                b = new Blog();
+                b.Id = i;
+                b.Name = r.SelectSingleNode("/root/blog[@id=" + i + "]").Attributes["name"].InnerText;
+                b.Type = Convert.ToInt32(r.SelectSingleNode("/root/blog[@id=" + i + "]").Attributes["type"].InnerText);
+                b.Category = r.SelectSingleNode("/root/blog[@id=" + i + "]").Attributes["category"].InnerText;
+                b.Path = r.SelectSingleNode("/root/blog[@id=" + i + "]").ChildNodes[0].InnerText;
+                b.Time = r.SelectSingleNode("/root/blog[@id=" + i + "]").ChildNodes[1].InnerText;
+                list.Add(b);
+            }
+            
+            if (string.IsNullOrEmpty(count))
+            {
+                ViewData["count"] = 2;
+            }
+            else if (Convert.ToInt32(count)-maxb>=3)
+            {
+                ViewData["out"] = 1;
+                ViewData["count"] = count;
+            }
+            else
+            {
+                ViewData["count"] = count;
+            }
+            return View(list);
         }
 
         public IActionResult Privacy()

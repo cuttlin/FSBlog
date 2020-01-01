@@ -58,3 +58,8 @@ D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\FSBlog.dll
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\FSBlog.pdb
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\FSBlog.csproj.CopyComplete
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Blog\BlogList.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\FSBlog.csprojAssemblyReference.cache
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Blog\BlogDetail.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Message\Index.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Essays\Index.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Essays\EssaysList.g.cshtml.cs

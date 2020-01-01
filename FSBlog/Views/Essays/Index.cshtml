@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "吃定彩虹";
+}
+
+
+<div class="form-group col-6" style="margin-left:200px;margin-top:50px;">
+    <label class="form-label" for="input-example-1">给他个面子，输入他的QQ号叭！</label>
+    <input class="form-input" type="text" id="qq" placeholder="Q Q">
+</div>
+<button class="btn" style="margin-left:660px;margin-top:100px;" onclick="login()">O K !</button>
+<script type="text/javascript">
+    function login() {
+        let qq = document.getElementById("qq");
+        window.location.href = "/Essays/Index?qq=" + qq.value.trim();
+    }
+</script>

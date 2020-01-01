@@ -1,0 +1,57 @@
+﻿@model List<Message>
+@{
+    ViewData["Title"] = "留下你的脚印";
+}
+
+
+<div style="height:50px;">
+</div>
+<div style="width:965px;height:600px;overflow-y:scroll;background-color:aliceblue" ;>
+    @foreach (var item in Model)
+    {
+        <div class="tile" style="background-color:azure;margin-top:8px;">
+            <div class="tile-icon">
+                <div class="example-tile-icon">
+                    <i class="icon icon-file centered"></i>
+                    @item.Name
+                </div>
+            </div>
+            <div class="tile-content">
+                <p class="tile-title">@item.Time</p>
+                <p class="tile-subtitle">@item.Content</p>
+            </div>
+        </div>
+    }
+</div>
+<div style="height:35px;">
+</div>
+<form action="/Message/Index" method="post">
+    <div>
+
+    </div>
+    <div class="columns col-gapless">
+        <div class="form-group col-4 col-sm-12">
+            <label class="form-label" for="input-example-1">你的名字！</label>
+            <input class="form-input" type="text" name="uname" id="uname" placeholder="Name">
+        </div>
+        <div class="form-group col-4 col-sm-12" style="margin-left:40px;">
+            <label class="form-label" for="input-example-2">还有邮箱！</label>
+            <input class="form-input" type="email" name="uemail" id="uemail" placeholder="Email">
+        </div>
+    </div>
+    <div class="input-group">
+        <input type="text" id="txt" name="txt" class="form-input" />
+        <input type="submit" class="btn btn-primary" value="发 送" onclick="send()" />
+    </div>
+</form>
+<script type="text/javascript">
+    function send() {
+        var uname = document.getElementById("uname").value;
+        var uemail = document.getElementById("uemail").value;
+        var utxt = document.getElementById("txt").value;
+        if (uname.trim().length == 0 || uemail.trim().length == 0 || utxt.trim().length == 0) {
+            alert("啊哦！填一个吧！");
+            return;
+        }
+    }
+</script>

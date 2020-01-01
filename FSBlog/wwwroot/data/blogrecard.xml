@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <blog id="1" name="C#设置和获取系统环境变量" type="1" category="C#">
+    <path>/data/blogs/C#设置和获取系统环境变量.md</path>
+    <time>2018-03-26 23:19</time>
+  </blog>
+  <blog id="2" name="eclipse快捷方式(Winodws下)" type="1" category="Java">
+    <path>/data/blogs/eclipse快捷方式(Winodws下).md</path>
+    <time>2018-05-17 15:05</time>
+  </blog>
+  <blog id="3" name="C—99乘法表" type="1" category="C/C++">
+    <path>/data/blogs/C—99乘法表.md</path>
+    <time>2018-08-17 11:10</time>
+  </blog>
+  <blog id="4" name="C—斐波那契数列[生兔子问题]" type="1" category="C/C++">
+    <path>/data/blogs/C—斐波那契数列[生兔子问题].md</path>
+    <time>2018-08-17 15:29</time>
+  </blog>
+  <blog id="5" name="C—判断素数" type="1" category="C/C++">
+    <path>/data/blogs/C—判断素数.md</path>
+    <time>2018-08-17 16:18</time>
+  </blog>
+  <blog id="6" name="C—完数" type="1" category="C/C++">
+    <path>/data/blogs/C—完数.md</path>
+    <time>2018-08-17 19:41</time>
+  </blog>
+  <blog id="7" name="C—数组的转置" type="1" category="C/C++">
+    <path>/data/blogs/C—数组的转置.md</path>
+    <time>2018-08-17 20:41</time>
+  </blog>
+  <blog id="8" name="C—水仙花数" type="1" category="C/C++">
+    <path>/data/blogs/C—水仙花数.md</path>
+    <time>2018-08-17 20:49</time>
+  </blog>
+  <blog id="9" name="C—杨辉三角" type="1" category="C/C++">
+    <path>/data/blogs/C—杨辉三角.md</path>
+    <time>2018-08-17 21:02</time>
+  </blog>
+  <blog id="10" name="主机访问虚拟机ORACLE报错：ORA-12541 TNSno listener解决办法与无法启动oracle listener服务解决办法" type="1" category="Oracle">
+    <path>/data/blogs/主机访问虚拟机ORACLE报错：ORA-12541 TNSno listener解决办法与无法启动oracle listener服务解决办法.md</path>
+    <time>2018-09-06 15:10</time>
+  </blog>
+  <blog id="11" name=".NET Core IIS 500.19与500.21问题" type="1" category="C#">
+    <path>/data/blogs/.NET Core IIS 500.19与500.21问题.md</path>
+    <time>2019-07-09 15:12</time>
+  </blog>
+</root>

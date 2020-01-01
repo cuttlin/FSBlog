@@ -1,18 +1,58 @@
-﻿
+﻿@model List<Blog>
 @{
-    ViewData["Title"] = "BlogList";
+    ViewData["Title"] = "遇上彩虹";
 }
-@*<script src="https://cdn.bootcss.com/showdown/1.3.0/showdown.min.js"></script>*@
-<script src="~/js/showdown.min.js"></script>
-<li id="id2">321</li>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<div class="filter">
+    <input type="radio" id="tag-0" class="filter-tag" name="filter-radio" hidden checked>
+    @for (int i = 1; i <= Convert.ToInt32(ViewData["categoryCount"]); i++)
+    {
+        <input type="radio" id="tag-@i" class="filter-tag" name="filter-radio" hidden>
+    }
+    @{ Dictionary<int, string> dic = ViewData["dic"] as Dictionary<int, string>;
+        Dictionary<string, int> rdic = ViewData["rdic"] as Dictionary<string, int>;
+    }
+
+    <div class="filter-nav">
+        <label class="chip" for="tag-0">All</label>
+        @for (int j = 1; j <= Convert.ToInt32(ViewData["categoryCount"]); j++)
+        {
+            <label class="chip" for="tag-@j">@dic[j]</label>
+        }
+
+    </div>
+    <div class="filter-body">
+        @foreach (var item in Model)
+        {
+            //string k = rdic[item.Category].ToString();
+
+
+            <div class="filter-item card" data-tag="tag-@rdic[item.Category]">
+                <!-- Filter item content -->
+
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title h5">@item.Name</div>
+                        <div class="card-subtitle text-gray">@item.Category</div>
+                    </div>
+                    <div class="card-body">
+                        linux发音五花八门版本颇多，见到和听到的不下10种。根据linux的创始人Linus Torvalds的说法，Linux的发音和“Minix”是押韵的。“Li”中“i”的发音类似于“Minix”中“i”的发音，而“nux”中“u”的发音类似于英文单词“profess”中“o”的发音。
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary" onclick="alltext(@item.Id)">阅读全文</button>
+                    </div>
+                </div>
+
+            </div>
+        }
+
+        <!-- Filter items -->
+    </div>
+</div>
 <script type="text/javascript">
-  
-    let converter = new showdown.Converter();
-    let text = '### 123';
-    let html = converter.makeHtml(text);
-    alert('333');
-    alert(html);
-    document.getElementById('id2').innerHTML = html;
-    
-    
+    function alltext(id) {
+        window.location.href = "/Blog/BlogDetail?id=" + id;
+    }
 </script>
