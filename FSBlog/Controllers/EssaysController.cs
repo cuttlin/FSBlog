@@ -12,7 +12,7 @@ namespace FSBlog.Controllers
         {
             if (!string.IsNullOrEmpty(qq))
             {
-                if (qq=="1")
+                if (qq=="0")
                 {
                     Response.Redirect("/Essays/EssaysList");
                 }

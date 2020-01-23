@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "4f45982aecbd83d209b30822c1fd95d1c1f1c54c"
+    "signature": "4c3e26edde545872ef067e8839a9af86e974ac7b"
   },
   "compilationOptions": {
     "defines": [
@@ -29,8 +29,7 @@
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.AspNetCore.Session": "2.2.0",
           "Microsoft.NETCore.App": "2.2.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3",
-          "showdown": "0.9.0"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.2.3"
         },
         "runtime": {
           "FSBlog.dll": {}
@@ -219,7 +218,6 @@
           "lib/netstandard1.6/NuGet.Frameworks.dll": {}
         }
       },
-      "showdown/0.9.0": {},
       "System.Composition/1.0.31": {
         "dependencies": {
           "System.Composition.AttributedModel": "1.0.31",
@@ -3642,13 +3640,6 @@
       "sha512": "sha512-qbXaB76XYUVLocLBs8Z9TS/ERGK2wm797feO+0JEPFvT7o7MRadOR77mqaSD4J1k8G+DlZQyq+MlkCuxrkr3ag==",
       "path": "nuget.frameworks/4.7.0",
       "hashPath": "nuget.frameworks.4.7.0.nupkg.sha512"
-    },
-    "showdown/0.9.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-AIsNBPK2XoSSH1yvwlQW5oYmOM7swTaIdvJzy7syAQr4hegR4+zlgo9MdtZTQrv5sNHABYt+h+R1I6fN5ItODQ==",
-      "path": "showdown/0.9.0",
-      "hashPath": "showdown.0.9.0.nupkg.sha512"
     },
     "System.Composition/1.0.31": {
       "type": "package",

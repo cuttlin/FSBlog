@@ -63,3 +63,4 @@ D:\github_code\FSBlog\FSBlog\obj\Release\netcoreapp2.2\Razor\Views\Blog\BlogDeta
 D:\github_code\FSBlog\FSBlog\obj\Release\netcoreapp2.2\Razor\Views\Essays\EssaysList.g.cshtml.cs
 D:\github_code\FSBlog\FSBlog\obj\Release\netcoreapp2.2\Razor\Views\Essays\Index.g.cshtml.cs
 D:\github_code\FSBlog\FSBlog\obj\Release\netcoreapp2.2\Razor\Views\Message\Index.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Release\netcoreapp2.2\Razor\Views\About\Index.g.cshtml.cs

@@ -6,4 +6,16 @@
     <time>2020-01-01 10:55:00</time>
     <content>哈哈哈哈哈</content>
   </message>
+  <message id="2" ip="">
+    <name>misterWang</name>
+    <email>123@123.com</email>
+    <time>2020-01-01 23:38:31</time>
+    <content>元旦快乐，上线快乐！</content>
+  </message>
+  <message id="3" ip="">
+    <name>root</name>
+    <email>1002158476@qq.com</email>
+    <time>2020-01-02 10:09:36</time>
+    <content>沙发</content>
+  </message>
 </board>

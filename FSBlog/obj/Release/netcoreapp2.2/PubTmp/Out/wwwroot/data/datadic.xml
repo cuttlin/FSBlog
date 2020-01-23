@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <root>
-  <category count="5">
+  <category count="6">
     <item>C/C++</item>
     <item>Java</item>
     <item>C#</item>
     <item>Oracle</item>
     <item>数据结构与算法</item>
+    <item>AcWing</item>
   </category>
 </root>

@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="~/css/spectre-icons.min.css" />
     <link rel="stylesheet" href="~/css/spectre.min.css" />
     @*<environment include="Development">
-        <link href="~/img/cat_icon.png" rel="icon" type="image/x-icon" />
-        <link rel="stylesheet" href="~/css/spectre-exp.min.css" />
-        <link rel="stylesheet" href="~/css/spectre-icons.min.css" />
-        <link rel="stylesheet" href="~/css/spectre.min.css" />
-    </environment>*@
+            <link href="~/img/cat_icon.png" rel="icon" type="image/x-icon" />
+            <link rel="stylesheet" href="~/css/spectre-exp.min.css" />
+            <link rel="stylesheet" href="~/css/spectre-icons.min.css" />
+            <link rel="stylesheet" href="~/css/spectre.min.css" />
+        </environment>*@
     @*<environment exclude="Development">
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
                   asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
@@ -22,17 +22,24 @@
                   integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"/>
         </environment>*@
     <link rel="stylesheet" href="~/css/site.css" />
+
 </head>
 <body>
+
     <header class="navbar">
         <div class="container grid-lg">
             <section class="navbar-section">
-                <a href="/Home/Index" class="navbar-brand mr-2">主页</a>
-                <a href="/Blog/BlogList" class="btn btn-link">我的博客</a>
-                <a href="/Essays/Index" class="btn btn-link">我的随笔</a>
-                <a href="/Message/Index" class="btn btn-link">留言板</a>
-                <a href="https://www.cnblogs.com/fsh001" class="btn btn-link tooltip tooltip-bottom" data-tooltip="记得点个赞鸭" target="_blank">博客园</a>
-                <a href="https://github.com/cuttlin" target="_blank" class="btn btn-link tooltip tooltip-bottom"  data-tooltip="记得点个star鸭">GitHub</a>
+                <ul class="tab">
+                    <a href="/Home/Index" class="navbar-brand mr-2">主页</a>
+                    <a href="/Blog/BlogList" class="btn btn-link">我的博客</a>
+                    <a href="/Essays/Index" class="btn btn-link">我的随笔</a>
+                    <a href="/Message/Index" class="btn btn-link">留言板</a>
+                    <a href="https://www.cnblogs.com/fsh001" class="btn btn-link tooltip tooltip-bottom" data-tooltip="记得点个赞鸭" target="_blank">博客园</a>
+                    <a href="https://github.com/cuttlin" target="_blank" class="btn btn-link tooltip tooltip-bottom" data-tooltip="记得点个star鸭">GitHub</a>
+                    <a href="/About/Index" class="btn btn-link">关于</a>
+
+                </ul>
+
             </section>
             <section class="navbar-section">
                 <div class="input-group input-inline">
@@ -56,6 +63,7 @@
             -
             <a href="mailto:fengshuai99@outlook.com">Contact us</a>
         </div>
+
     </footer>
 
     @*<environment include="Development">
@@ -80,4 +88,9 @@
 
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.0/dist/APlayer.min.css">
+<script src="https://blog-static.cnblogs.com/files/yjlaugus/APlayer.min.js"></script>
+<div id="aplayer" class="aplayer" data-id="3192089837" data-server="netease" data-type="playlist" data-fixed="true" data-listfolded="true" data-order="random" data-theme="#F58EA8"></div>
+<script src="https://unpkg.com/meting@1.2/dist/Meting.min.js"></script>

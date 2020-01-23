@@ -44,4 +44,28 @@
     <path>/data/blogs/.NET Core IIS 500.19与500.21问题.md</path>
     <time>2019-07-09 15:12</time>
   </blog>
+  <blog id="12" name="2019-年终总结" type="2" category="C#">
+    <path>/data/blogs/2019-年终总结.md</path>
+    <time>2020-01-04 15:21</time>
+  </blog>
+  <blog id="13" name="快速排序" type="1" category="数据结构与算法">
+    <path>/data/blogs/快速排序.md</path>
+    <time>2020-01-08 19:36</time>
+  </blog>
+  <blog id="14" name="归并排序" type="1" category="数据结构与算法">
+    <path>/data/blogs/归并排序.md</path>
+    <time>2020-01-09 12:53</time>
+  </blog>
+  <blog id="15" name="二分查找" type="1" category="数据结构与算法">
+    <path>/data/blogs/二分查找.md</path>
+    <time>2020-01-09 18:13</time>
+  </blog>
+  <blog id="16" name="逆序对的数量" type="1" category="AcWing">
+    <path>/data/blogs/逆序对的数量.md</path>
+    <time>2020-01-10 19:01</time>
+  </blog>
+  <blog id="17" name="数的范围" type="1" category="AcWing">
+    <path>/data/blogs/数的范围.md</path>
+    <time>2020-01-10 20:56</time>
+  </blog>
 </root>

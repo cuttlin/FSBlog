@@ -39,7 +39,7 @@ namespace FSBlog.Controllers
                 ++id;
                 XmlElement message = doc.CreateElement("message");
                 message.SetAttribute("id", id.ToString());
-                message.SetAttribute("ip", HttpContext.Session.GetString("ip"));
+                message.SetAttribute("ip", HttpContext.Session.GetString("uip"));
                 XmlElement name = doc.CreateElement("name");
                 XmlElement email = doc.CreateElement("email");
                 XmlElement time = doc.CreateElement("time");

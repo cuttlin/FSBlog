@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "关于";
+}
+<div class="card-body">
+    <p>
+        2020-01-01 00:00:00 - @DateTime.Now.ToString("yyyy-MM-dd hh:mm:ss")
+    </p>
+    <p>
+        访问总量：@ViewData["count"]
+    </p>
+    <p>
+        访客人数：@ViewData["users"]
+    </p>
+</div>

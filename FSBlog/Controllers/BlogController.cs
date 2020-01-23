@@ -66,7 +66,6 @@ namespace FSBlog.Controllers
 
             var result = CommonMark.CommonMarkConverter.Convert(str);
             ViewData["textc"] = result;
-            Console.WriteLine(str);
 
             sr.Close();
             return View();

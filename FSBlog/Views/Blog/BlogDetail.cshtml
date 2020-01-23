@@ -1,8 +1,30 @@
 ﻿
 @{
-    ViewData["Title"] = "BlogDetail";
+    ViewData["Title"] = "博客详情";
 }
 
 @{ var a = ViewData["textc"].ToString();}
+<style type="text/css">
+    h3 {
+        background: #5755d9;
+        color: #fff;
+        width:500px;
+    }
+    h4 {
+        background: #ffb700;
+        color: #fff;
+    }
+</style>
 @Html.Raw(a)
 
+<img id="dz" src="~/img/dianzan.png" onclick="updateImg()" />赞！
+
+<!-- 代码染色 -->
+<link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/purebasic.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();
+    function updateImg() {
+        document.getElementById("dz").src = "/img/dianzan1.png";
+    }
+ </script>
