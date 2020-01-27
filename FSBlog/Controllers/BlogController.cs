@@ -19,7 +19,7 @@ namespace FSBlog.Controllers
             _hostingEnvironment = hostingEnvironment;
         }
 
-        public IActionResult BlogList(string id)
+        public async Task<IActionResult> BlogList(string id)
         {
             XmlDocument doc = new XmlDocument();
             // 读取博客的category
@@ -54,7 +54,7 @@ namespace FSBlog.Controllers
             return View(list);
         }
 
-        public IActionResult BlogDetail(string id)
+        public async Task<IActionResult> BlogDetail(string id)
         {
             XmlDocument doc = new XmlDocument();
             doc.Load(_hostingEnvironment.WebRootPath + @"/data/blogrecard.xml");
@@ -66,9 +66,21 @@ namespace FSBlog.Controllers
 
             var result = CommonMark.CommonMarkConverter.Convert(str);
             ViewData["textc"] = result;
-
+            ViewData["id"] = id;
             sr.Close();
             return View();
+        }
+
+        public async Task<IActionResult> Support([FromHeader]string detail)
+        {
+            XmlDocument d = new XmlDocument();
+            d.Load(_hostingEnvironment.WebRootPath + Blog.BLOGRECARDPATH);
+            XmlElement r = d.DocumentElement;
+            XmlNode xn = r.SelectSingleNode("/root/blog[@id=" + detail + "]");
+            int i = Convert.ToInt32(xn["support"].InnerText);
+            xn["support"].InnerText = (++i).ToString();
+            d.Save(_hostingEnvironment.WebRootPath + Blog.BLOGRECARDPATH);
+            return Ok();
         }
     }
 }

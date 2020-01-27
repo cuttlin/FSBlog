@@ -64,3 +64,5 @@ D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Message\Index.g
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Essays\Index.g.cshtml.cs
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Essays\EssaysList.g.cshtml.cs
 D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\About\Index.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Index.g.cshtml.cs
+D:\github_code\FSBlog\FSBlog\obj\Debug\netcoreapp2.2\Razor\Views\Admin\Manage.g.cshtml.cs

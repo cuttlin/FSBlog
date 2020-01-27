@@ -1,0 +1,68 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>后台管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="//fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+</head>
+
+<body>
+    <div class="padding-all">
+        <div class="header">
+            <h1>Welcome to login</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+
+                <input type="text" id="uname" placeholder="User Name  or  email..." required="" />
+                <input type="password" id="upwd" class="padding" placeholder="Password" required="" />
+                <input type="submit" value="login" onclick="login()">
+
+            </div>
+            <div class="clear" id="error" style="background-color:crimson;"> </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2020  FengShuaiHu  <a href="https://github.com/cuttlin">  github </a></p>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    function login() {
+        let name = document.getElementById("uname").value;
+        let password = document.getElementById("upwd").value;
+
+        let info = "uname=" + name + "&upwd=" + password;
+
+
+        var xhr = new XMLHttpRequest;//创建一个 XMLHttpRequest 对象，XMLHttpRequest是实现ajax的基础
+        xhr.open("POST", "/Admin/Index", true)//请求方式为"Post","/Home/Index"为服务器地址（在MVC这里就是控制器地址+方法名），true表示选择异步
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded")//设置请求参数类型
+        xhr.setRequestHeader("uname", name)
+        xhr.setRequestHeader("upwd", password)
+        xhr.send();
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var s = xhr.responseText;
+                if (JSON.parse(s).error == "success") { window.location.href = "/Admin/Manage"; }
+                document.getElementById("error").innerHTML = JSON.parse(s).error;
+            }
+
+        }
+    }
+</script>

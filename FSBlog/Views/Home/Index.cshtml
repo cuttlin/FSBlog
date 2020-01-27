@@ -17,8 +17,8 @@
                     <div class="card-subtitle text-gray">@b.Category</div>
                 </div>
                 <div class="card-body">
-                    <img src="~/img/good.png" height="20" width="20" />0
-                    <img src="~/img/talk.png" height="20" width="20" />0
+                    <img src="~/img/good.png" height="20" width="20" />@b.Support
+                    <img src="~/img/talk.png" height="20" width="20" />@b.Comment
                 </div>
                 <div class="card-footer">
                     <button class="btn btn-primary" onclick="alltext(@b.Id)">阅读全文</button>
@@ -50,8 +50,8 @@
                             <div class="card-subtitle text-gray">@item.Category</div>
                         </div>
                         <div class="card-body">
-                            <img src="~/img/good.png" height="20" width="20" />0
-                            <img src="~/img/talk.png" height="20" width="20" />0
+                            <img src="~/img/good.png" height="20" width="20" />@item.Support
+                            <img src="~/img/talk.png" height="20" width="20" />@item.Comment
                         </div>
                         <div class="card-footer">
                             <button class="btn btn-primary" onclick="alltext(@item.Id)">阅读全文</button>

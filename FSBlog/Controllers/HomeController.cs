@@ -28,7 +28,7 @@ namespace FSBlog.Controllers
         }
 
 
-        public IActionResult Index(string count)
+        public async Task<IActionResult> Index(string count)
         {
             ViewData["Title"] = "首页";
             
@@ -116,7 +116,9 @@ namespace FSBlog.Controllers
             b.Name = lastc.Attributes["name"].InnerText;
             b.Type = Convert.ToInt32(lastc.Attributes["type"].Value);
             b.Category = lastc.Attributes["category"].InnerText;
-            b.Time = lastc.LastChild.InnerText;
+            b.Time = lastc["time"].InnerText;
+            b.Support = Convert.ToInt32(lastc["support"].InnerText);
+            b.Comment = Convert.ToInt32(lastc["comment"].InnerText);
             ViewData["blog"] = b;
             int maxb = b.Id;
             // 加载剩余项
@@ -129,6 +131,8 @@ namespace FSBlog.Controllers
                 b.Category = r.SelectSingleNode("/root/blog[@id=" + i + "]").Attributes["category"].InnerText;
                 b.Path = r.SelectSingleNode("/root/blog[@id=" + i + "]").ChildNodes[0].InnerText;
                 b.Time = r.SelectSingleNode("/root/blog[@id=" + i + "]").ChildNodes[1].InnerText;
+                b.Support = Convert.ToInt32(r.SelectSingleNode("/root/blog[@id=" + i + "]")["support"].InnerText);
+                b.Comment = Convert.ToInt32(r.SelectSingleNode("/root/blog[@id=" + i + "]")["comment"].InnerText);
                 list.Add(b);
             }
             
